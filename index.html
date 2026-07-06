@@ -95,9 +95,10 @@
 
             <!-- Page 1: Dashboard Home -->
             <section id="hero" class="content-section active">
-                <div class="dashboard-welcome">
-                    <div class="welcome-msg">안녕하세요, 비즈니스 가치를 아키텍처로 실현하는 개발자 김현입니다.</div>
-                    <div class="badge-container">
+                <div class="section-header">
+                    <h1 class="section-title">비즈니스 가치를 견고한 아키텍처와 코드로 실현하는 도메인 특화 백엔드 개발자</h1>
+                    <div class="section-subtitle">16년의 제조·물류 현업 노하우와 백엔드 기술력을 융합한 솔루션 설계</div>
+                    <div class="badge-container" style="margin-top: 1rem;">
                         <span class="tag-badge">#도메인 시너지</span>
                         <span class="tag-badge">#레거시 웹전환</span>
                         <span class="tag-badge">#데이터 아키텍처 개선</span>
@@ -160,24 +161,95 @@
                     </div>
                 </div>
 
-                <!-- 외주 해결 전략 카드 (Full-Width) -->
-                <div class="branding-card glass-card">
-                    <h3>외주 및 프리랜서 개발 해결 전략</h3>
-                    <div class="strategy-grid">
-                        <div class="strategy-card glass-card">
-                            <div class="strat-icon-box"><i class="fas fa-industry"></i></div>
-                            <h4>도메인 기획</h4>
-                            <p>16년 이상 현업 제조/물류 경험을 바탕으로 <strong>실제 작동하는 비즈니스 프로세스</strong>를 설계하고 기획합니다.</p>
+                <!-- Home Split Section (Strategy & AI Terminal) -->
+                <div class="home-split">
+                    <!-- Left: Core Strategy Card -->
+                    <div class="branding-card glass-card">
+                        <h3>외주 및 프리랜서 개발 해결 전략 (Strategy)</h3>
+                        <div class="strategy-list">
+                            <div class="strategy-item">
+                                <div class="strat-number-badge">01</div>
+                                <div class="strategy-item-details">
+                                    <h4>도메인 기반 프로세스 최적화 설계</h4>
+                                    <p>16년 이상의 제조/물류 현업 실무 노하우를 바탕으로, 단순 요건 수렴을 넘어 <strong>실제 작동 가능한 비즈니스 로직(BOM, 수납 수가, 선입선출)</strong>을 완벽히 설계합니다.</p>
+                                </div>
+                            </div>
+                            <div class="strategy-item">
+                                <div class="strat-number-badge">02</div>
+                                <div class="strategy-item-details">
+                                    <h4>레거시 웹 전환 및 아키텍처 현대화</h4>
+                                    <p>오래된 C# 데스크톱 프로그램 및 JSP 스파게티 레거시 코드를 역공학하여, <strong>Spring Boot 및 표준 웹 아키텍처 기반의 고성능 시스템</strong>으로 안전하게 이관합니다.</p>
+                                </div>
+                            </div>
+                            <div class="strategy-item">
+                                <div class="strat-number-badge">03</div>
+                                <div class="strategy-item-details">
+                                    <h4>AI 에이전트 연동 초고속 개발</h4>
+                                    <p>Claude Code 및 Gemini API 등 최첨단 AI 에이전트를 개발 파이프라인에 적극 도입하여, <strong>구축 및 배포 생산성을 3배 이상 단축</strong>하고 오류 검증 속도를 극대화합니다.</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="strategy-card glass-card">
-                            <div class="strat-icon-box"><i class="fas fa-sync-alt"></i></div>
-                            <h4>레거시 마이그레이션</h4>
-                            <p>오래된 C# 데스크톱 ERP 및 JSP 레거시 시스템을 <strong>최신 웹 환경(Spring Boot)으로 안정적으로 전환</strong>합니다.</p>
+                    </div>
+
+                    <!-- Right: Interactive Roadmap Widget -->
+                    <div class="roadmap-widget glass-card">
+                        <div class="roadmap-header">
+                            <div class="roadmap-status-dot"></div>
+                            <h4>프로젝트 협업 프로세스 (Roadmap)</h4>
+                            <span class="roadmap-badge">Active</span>
                         </div>
-                        <div class="strategy-card glass-card">
-                            <div class="strat-icon-box"><i class="fas fa-robot"></i></div>
-                            <h4>AI 가속화</h4>
-                            <p>AI 에이전트(Claude Code, Gemini)를 활용하여 <strong>개발 및 배포 프로세스 생산성을 3배 이상 극대화</strong>합니다.</p>
+                        <div class="roadmap-body">
+                            <div class="roadmap-step">
+                                <div class="step-icon-col">
+                                    <div class="step-num-circle done">01</div>
+                                    <div class="step-connector"></div>
+                                </div>
+                                <div class="step-content">
+                                    <div class="step-header-row">
+                                        <h5>도메인 분석 & DB 설계</h5>
+                                        <span class="status-pill status-done">Analysis</span>
+                                    </div>
+                                    <p>16년 제조/물류 현장 노하우로 복잡한 비즈니스 요건을 분석하고 최적화된 DB 스키마를 수립합니다.</p>
+                                </div>
+                            </div>
+                            <div class="roadmap-step">
+                                <div class="step-icon-col">
+                                    <div class="step-num-circle done">02</div>
+                                    <div class="step-connector"></div>
+                                </div>
+                                <div class="step-content">
+                                    <div class="step-header-row">
+                                        <h5>아키텍처 수립 & 웹전환</h5>
+                                        <span class="status-pill status-done">Structure</span>
+                                    </div>
+                                    <p>C# 프로그램, JSP 등 레거시 시스템을 Spring Boot 기반의 표준 백엔드 환경으로 신속히 전환합니다.</p>
+                                </div>
+                            </div>
+                            <div class="roadmap-step">
+                                <div class="step-icon-col">
+                                    <div class="step-num-circle done">03</div>
+                                    <div class="step-connector"></div>
+                                </div>
+                                <div class="step-content">
+                                    <div class="step-header-row">
+                                        <h5>AI 가속 초고속 구현</h5>
+                                        <span class="status-pill status-done">Accelerate</span>
+                                    </div>
+                                    <p>최첨단 AI 에이전트(Claude Code, Gemini)를 활용해 소스 구축 및 오류 검증 속도를 3배 이상 단축합니다.</p>
+                                </div>
+                            </div>
+                            <div class="roadmap-step">
+                                <div class="step-icon-col">
+                                    <div class="step-num-circle done">04</div>
+                                </div>
+                                <div class="step-content">
+                                    <div class="step-header-row">
+                                        <h5>무중단 배포 및 검증</h5>
+                                        <span class="status-pill status-ready">Verify & Deploy</span>
+                                    </div>
+                                    <p>100% 연산 정합성을 검증한 뒤 Linux 및 Docker 가상화 환경에 안전하게 배포 및 안정화합니다.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -209,7 +281,7 @@
                         <div class="comp-icon-box"><i class="fas fa-network-wired"></i></div>
                         <div class="comp-details">
                             <h4>분산 수집 및 인프라 현대화</h4>
-                            <p>PLC 및 센서 설비로부터 발생하는 원천 데이터를 <strong>Node-RED 기반 병렬 처리 파이프라인</strong>을 활용해 안정적으로 수집하고 자동 파싱합니다. Nginx 기반 멀티 테넌시를 적용하여 분산된 클라이언트 배포 구조를 단일 패키지로 효율화합니다.</p>
+                            <p>PLC 및 센서 설비로부터 발생하는 원천 데이터를 <strong>Node-RED 기반 병렬 처리 파이프라인</strong>을 활용해 안정적으로 수집하고 자동 파싱합니다. Nginx 기반 멀티테넌시를 적용하여 분산된 클라이언트 배포 구조를 단일 패키지로 효율화합니다.</p>
                         </div>
                     </div>
                     <div class="competency-card glass-card">
@@ -230,7 +302,7 @@
                         <div class="comp-icon-box"><i class="fas fa-shield-alt"></i></div>
                         <div class="comp-details">
                             <h4>보안성 확보 및 실무 유틸리티 최적화</h4>
-                            <p>Fail2ban을 운영 인프라에 적용하여 포트 스캔 및 Brute-Force 등 악의적인 접근을 로그 패턴 기반으로 탐지 및 차단하여 <strong>서버 안정성을 보장</strong>합니다. JWT/bcrypt 기반 사용자 인증 보안과 xlsx 모듈을 활용한 대용량 엑셀 처리 유틸리티를 성공적으로 도입했습니다.</p>
+                            <p>Fail2ban을 운영 인프라에 적용하여 포트 스캔 및 Brute-Force 등 악의적인 접근을 로그 패턴 기반으로 탐지 및 차단하여 <strong>서버 안정성을 보장</strong>합니다. JWT/bcrypt 기반 사용자 인증 보안과 xlsx 모듈을 활용한 대용량 엑셀 처리 유틸리티를 구축하여 보안 및 실무 편의성을 극대화합니다.</p>
                         </div>
                     </div>
                 </div>
@@ -245,13 +317,13 @@
                         <p class="category-desc">Java/Spring Boot 및 Node.js 기반 비즈니스 로직 및 API 설계</p>
                         <div class="skills-list">
                             <span class="skill-chip"><i class="fab fa-java color-java"></i> Java</span>
-                            <span class="skill-chip">Spring Boot</span>
-                            <span class="skill-chip">Node.js (Express)</span>
+                            <span class="skill-chip"><i class="fas fa-leaf color-spring"></i> Spring Boot</span>
+                            <span class="skill-chip"><i class="fab fa-node-js color-node"></i> Node.js (Express)</span>
                             <span class="skill-chip">MyBatis</span>
                             <span class="skill-chip">JPA</span>
-                            <span class="skill-chip">Python</span>
+                            <span class="skill-chip"><i class="fab fa-python color-python"></i> Python</span>
                             <span class="skill-chip">RESTful API</span>
-                            <span class="skill-chip">C# 소스 분석</span>
+                            <span class="skill-chip"><i class="fab fa-windows color-csharp"></i> C# 소스 분석</span>
                             <span class="skill-chip">Maven</span>
                             <span class="skill-chip">JSP</span>
                         </div>
@@ -263,10 +335,10 @@
                         </div>
                         <p class="category-desc">산업용 실시간/대용량 트랜잭션 및 정규화 아키텍처 최적화</p>
                         <div class="skills-list">
-                            <span class="skill-chip">MariaDB</span>
-                            <span class="skill-chip">MySQL</span>
-                            <span class="skill-chip">OracleDB</span>
-                            <span class="skill-chip">Tibero</span>
+                            <span class="skill-chip"><i class="fas fa-database color-db"></i> MariaDB</span>
+                            <span class="skill-chip"><i class="fas fa-database color-db"></i> MySQL</span>
+                            <span class="skill-chip"><i class="fas fa-database color-db"></i> OracleDB</span>
+                            <span class="skill-chip"><i class="fas fa-database color-db"></i> Tibero</span>
                             <span class="skill-chip">ERD 설계</span>
                             <span class="skill-chip">DB Job / 프로시저</span>
                         </div>
@@ -278,16 +350,16 @@
                         </div>
                         <p class="category-desc">설비 신호 수집, 인프라 보안/장애 대응 및 자동화 툴셋</p>
                         <div class="skills-list">
-                            <span class="skill-chip">Node-RED</span>
-                            <span class="skill-chip">NGINX</span>
-                            <span class="skill-chip">Apache Tomcat</span>
-                            <span class="skill-chip">Linux (CentOS/Ubuntu)</span>
+                            <span class="skill-chip"><i class="fas fa-project-diagram color-spring"></i> Node-RED</span>
+                            <span class="skill-chip"><i class="fas fa-server color-node"></i> NGINX</span>
+                            <span class="skill-chip"><i class="fas fa-server color-java"></i> Apache Tomcat</span>
+                            <span class="skill-chip"><i class="fab fa-linux color-linux"></i> Linux (CentOS/Ubuntu)</span>
                             <span class="skill-chip">쉘 & 배치 스크립트</span>
-                            <span class="skill-chip">PLC 통신</span>
-                            <span class="skill-chip">서버 보안 / 접근제어</span>
-                            <span class="skill-chip">서버 관제 / 로그 관리</span>
+                            <span class="skill-chip"><i class="fas fa-network-wired color-ts"></i> PLC 통신</span>
+                            <span class="skill-chip"><i class="fas fa-shield-alt"></i> 서버 보안 / 접근제어</span>
+                            <span class="skill-chip"><i class="fas fa-chart-line"></i> 서버 관제 / 로그 관리</span>
                             <span class="skill-chip">SSO 연동</span>
-                            <span class="skill-chip">Claude Code / Gemini CLI / Git</span>
+                            <span class="skill-chip"><i class="fab fa-git-alt color-git"></i> Git</span>
                         </div>
                     </div>
                     <div class="skill-category-card glass-card">
@@ -297,12 +369,12 @@
                         </div>
                         <p class="category-desc">직관적인 MES 모니터링 화면 및 반응형 대시보드 구현</p>
                         <div class="skills-list">
-                            <span class="skill-chip">JavaScript</span>
-                            <span class="skill-chip">TypeScript</span>
+                            <span class="skill-chip"><i class="fab fa-js color-js"></i> JavaScript</span>
+                            <span class="skill-chip"><i class="fab fa-js color-ts"></i> TypeScript</span>
                             <span class="skill-chip">jQuery</span>
-                            <span class="skill-chip">React (학습 중)</span>
+                            <span class="skill-chip"><i class="fab fa-react color-react"></i> React (학습 중)</span>
                             <span class="skill-chip">Thymeleaf</span>
-                            <span class="skill-chip">HTML5/CSS3</span>
+                            <span class="skill-chip"><i class="fab fa-html5 color-html"></i> HTML5/CSS3</span>
                             <span class="skill-chip">EJS</span>
                             <span class="skill-chip">Axios</span>
                         </div>
@@ -346,6 +418,10 @@
                                     • <strong>준공공기관 보안/WA 대응</strong>: 대학교 특화 보안 서버 접근 제어 통제 및 정기 웹 취약점 패치 적용, 웹 접근성(WA) 표준 규격 교정.<br>
                                     • <strong>AI 기반 개발 도구 도입</strong>: Claude CLI 및 코드 에이전트 하네스 등 인공지능 기반 코딩 엔진을 활용해 대형 CMS 레거시 소스 분석 및 오류 디버깅 최적화.
                                 </p>
+                                <div class="tl-outcome">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>핵심 성과: 대학 솔루션 안정성 제고 및 인프라 보안 강화</span>
+                                </div>
                             </div>
                         </div>
 
@@ -364,6 +440,10 @@
                                     • <strong>보안 및 모니터링</strong>: DB 기반 계정 인증 도입 및 모든 요청 대상 인터셉터 보안 적용, 관리자 전용 설정 콘솔 구현 및 임계치 초과 시 SMS 자동 발송 기능 구축.<br>
                                     • <strong>대용량 쿼리 최적화</strong>: 천만 건 단위 계측 데이터 조회 병목 해결을 위한 SQL 조인 튜닝 및 인덱스 설계.
                                 </p>
+                                <div class="tl-outcome">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>핵심 성과: 계측 데이터 정합성 100% 확보 및 성능 10배 개선</span>
+                                </div>
                             </div>
                         </div>
 
@@ -377,11 +457,15 @@
                                 <p style="line-height: 1.7; font-size: 0.88rem;">
                                     인수인계 및 명세서가 전무한 상태에서 C# 데스크톱 레거시 기반 EMR 시스템의 Node.js 웹 전환 풀스택 개발.<br>
                                     • <strong>레거시 역공학 복원</strong>: 전임자가 AI 단순 번역만 수행하여 다량의 버그가 내포된 비작동 자바스크립트 코드를 원본 C# 비즈니스 로직 분석을 거쳐 정상 실행 가능한 Node.js 코드로 디버그 및 복원.<br>
-                                    • <strong>의료 워크플로우 구현</strong>: 접수 ➔ 진료 ➔ 수납으로 연결되는 의원급 EMR 핵심 업무 도메인 이해 및 웹 공정 이관.<br>
+                                    • <strong>의료 워크플로우 구현</strong>: 접수 → 진료 → 수납으로 연결되는 의원급 EMR 핵심 업무 도메인 이해 및 웹 공정 이관.<br>
                                     • <strong>수가 계산 엔진 복구</strong>: 환자별 건강보험 적용 여부, 특정 질병코드 매핑 등 복잡한 수가 가산 규칙에 기반한 수납 계산 로직 전면 검증 및 복구.<br>
                                     • <strong>원내 문서 출력 시스템</strong>: 원내 처방전, 환자 개인정보 수집/활용 동의서 등 다양한 규격 문서의 실시간 출력 서식 개발.<br>
                                     • <strong>의료 개인정보 보안</strong>: API 요청/응답 과정에서 환자 민감 정보 노출 취약점 식별 및 마스킹 데이터 처리(DTO 설계) 적용.
                                 </p>
+                                <div class="tl-outcome">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>핵심 성과: 의료 정보 보안 규격 및 수가 빌링 정합성 100% 충족</span>
+                                </div>
                             </div>
                         </div>
 
@@ -399,6 +483,10 @@
                                     • <strong>정산 및 통계 엔진 구축</strong>: 매출 추이 분석을 위한 일/주/월/분기/상하반기/연 단위 대규모 정산 집계 쿼리 최적화 및 리포팅 엔진 구현.<br>
                                     • <strong>거래 명세서 출력 모듈</strong>: 영수증, 거래 명세서, 전자 계산서 실시간 인쇄용 웹 출력 서식 개발.
                                 </p>
+                                <div class="tl-outcome">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>핵심 성과: 회계 정산 통계 집계 최적화 및 ERP 마이그레이션 완결</span>
+                                </div>
                             </div>
                         </div>
 
@@ -412,10 +500,14 @@
                                 <p style="line-height: 1.7; font-size: 0.88rem;">
                                     버섯 스마트팜(명덕농산) 대상의 웹 기반 실시간 공정 모니터링 MES 구축 및 PLC 설비 데이터 동적 바인딩.<br>
                                     • <strong>설비-MES 실시간 연동</strong>: PLC 통신 데몬과 웹 플랫폼(SMWP) 간의 시스템 변수 공유 로직을 수립하고, 공정 통과 센서 신호 실시간 감지 시 해당 시점의 계측 센서 로그를 특정 LOT 번호의 공정 이력 데이터로 자동 맵핑 및 데이터베이스 저장.<br>
-                                    • <strong>배양실 라이프사이클 관리</strong>: 물류창고형 배양실(Room) 공간의 유한 상태 기계(State Machine) 모델링 적용, 입고 ➔ 14일 숙성 배양 ➔ 출고 ➔ 청소 필요 ➔ 입고 가능의 순환 프로세스 제어 알고리즘 구현.<br>
+                                    • <strong>배양실 라이프사이클 관리</strong>: 물류창고형 배양실(Room) 공간의 유한 상태 기계(State Machine) 모델링 적용, 입고 → 14일 숙성 배양 → 출고 → 청소 필요 → 입고 가능의 순환 프로세스 제어 알고리즘 구현.<br>
                                     • <strong>실시간 환경 관제 및 경보</strong>: 이산화탄소, 온습도 센서 계측값 수집 및 한계 임계치 초과 발생 시 에러 로그 자동 적재 및 메인 대시보드 내 실시간 경보 알람 수량 배지 동적 렌더링.<br>
                                     • <strong>RBAC 기반 권한 제어</strong>: 관리자 권한 등급 맵핑별 메뉴 조회 분기 및 자재/배양실 환경 마스터 제어 어드민 웹 구현.
                                 </p>
+                                <div class="tl-outcome">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>핵심 성과: 스마트 MES 설비-공정 연동 및 배양 환경 관제 자동화</span>
+                                </div>
                             </div>
                         </div>
 
@@ -432,6 +524,10 @@
                                     • <strong>DB 적재 안정화</strong>: 대용량 설비 로그의 고속 적재를 위해 DB 배치(Batch) 인서트 구문 설계 및 INSERT IGNORE 적용, 네트워크 및 DB 예외 발생 시 수집 누락 방지를 위한 재처리 루프(Retry Loop) 구현.<br>
                                     • <strong>설비 연동 기틀 확립</strong>: 본 PJT를 통해 특화 커스텀 노드 제어법을 마스터하여 향후 타사 계측 모니터링 시스템 수집 엔진(다인이엔씨 등) 설계 시의 기술적 기반 확립.
                                 </p>
+                                <div class="tl-outcome">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>핵심 성과: 대규모 프레스 설비 로그 적재 유실률 0% 달성 및 표준 규격화</span>
+                                </div>
                             </div>
                         </div>
 
@@ -449,6 +545,10 @@
                                     • <strong>Spring & Cloud Web Project</strong>: Spring Framework 기반 웹서비스 개발 및 오픈 API 연동 클라우드 웹 프로젝트 수행 (총 130시간 프로젝트).<br>
                                     • <strong>Python Big Data & ML</strong>: 파이썬 기반 데이터 수집/저장시스템 개발, 머신러닝 기반 데이터 분석 및 시각화 프로젝트 수행 (총 120시간 프로젝트).
                                 </p>
+                                <div class="tl-outcome">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span>교육 이수: 백엔드 실무 개발자 기본 소양 및 데이터 분석 기초 이수</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -468,7 +568,11 @@
                                 <div class="tl-icon-box"><i class="fas fa-flask"></i></div>
                                 <h4>정밀 압출 공정 제어 및 로트(Lot) 이력 추적 관리</h4>
                                 <span class="tl-comp">㈜아이세로미림</span>
-                                <p>화학 마스터배치 고온 압출 공정 및 크린룸 공조 환경 하의 고순도 포장 용기 압출 성형 생산 프로세스 관리. 원자재 구매부터 완제품 판매까지의 자체 생산-영업 공급망 흐름 통제. 제품별 고유 배합비(BOM) 관리, 설비 압출 파라미터(온도, 압력 등) 데이터화 및 로트(Lot) 이력 추적. 크린룸 항온항습 공조(HVAC), 진공펌프 압력, 냉각 설비(쿨링타워) 등 공장 전반의 유틸리티 설비(FMS) 동작 메커니즘 이해 및 공정 최적화.</p>
+                                <p>화학 마스터배치 고온 압출 공정 및 크린룸 공조 환경 하의 고순도 포장 용기 <strong>압출 성형 생산 프로세스 관리</strong>. 원자재 구매부터 완제품 판매까지의 자체 생산-영업 공급망 흐름 통제. 제품별 고유 <strong>배합비(BOM) 관리</strong> 및 <strong>로트(Lot) 이력 추적</strong>. 크린룸 항온항습 공조(HVAC), 진공펌프 압력, 냉각 설비(쿨링타워) 등 공장 전반의 <strong>유틸리티 설비(FMS)</strong> 동작 메커니즘 이해 및 공정 최적화 수행.</p>
+                                <div class="tl-outcome">
+                                    <i class="fas fa-cube"></i>
+                                    <span>도메인 시너지: MES/FMS 데이터 모델링의 도메인 기반 확보</span>
+                                </div>
                             </div>
                         </div>
 
@@ -479,7 +583,11 @@
                                 <div class="tl-icon-box"><i class="fas fa-warehouse"></i></div>
                                 <h4>다중 온도대 WMS 로케이션 관리 및 출하 제어</h4>
                                 <span class="tl-comp">동원LOEX</span>
-                                <p>상온, 저온, 냉동 3대 보관 온도대 구역과 6단 고층 랙 로케이션 구조를 갖춘 대형 거점 물류 센터의 WMS 창고관리 프로세스. PDA 단말기를 활용한 바코드 스캔 기반 로케이션 적재/등록 제어를 관리하고, 채널별 실시간 발주 데이터를 배치(Batch) 처리하는 출하 스케줄 관리 및 선입선출(FIFO) 지향 피킹 동선 통제와 도크 배정 정렬 상차 출하 완료 단계를 관리.</p>
+                                <p>상온, 저온, 냉동 3대 보관 온도대 구역과 6단 고층 랙 로케이션 구조를 갖춘 대형 거점 물류 센터의 <strong>WMS 창고관리 프로세스 운영</strong>. PDA 단말기를 활용한 바코드 스캔 기반 <strong>로케이션 적재/등록 제어 관리</strong>, 채널별 실시간 발주 데이터를 배치(Batch) 처리하는 출하 스케줄 관리 및 <strong>선입선출(FIFO)</strong> 지향 피킹 동선 통제와 도크 배정 정렬 상차 출하 완료 단계 총괄.</p>
+                                <div class="tl-outcome">
+                                    <i class="fas fa-cube"></i>
+                                    <span>도메인 시너지: 물류 유통 WMS 시스템 백엔드 설계의 도메인 기반 확보</span>
+                                </div>
                             </div>
                         </div>
 
@@ -490,7 +598,11 @@
                                 <div class="tl-icon-box"><i class="fas fa-industry"></i></div>
                                 <h4>사출 성형 공정 통제 및 설비 레시피 관리</h4>
                                 <span class="tl-comp">성환산업</span>
-                                <p>사출, 사상, QC, 포장, 출고 생산 라일 설비 운영. 자재 배합비(BOM) 순환 제어 및 라인 클리어링 기획/수행.</p>
+                                <p>ABS 레진 사출 제조 공정 전주기(사출 → 사상 → QC → 포장 → 출고) 관리. <strong>배합비(BOM) 순환 제어</strong>를 통해 사출 부산물 및 불량 잔재물의 재가공(분쇄) 희석 비율을 조율하고, 원료 교체 시 이염 방지를 위한 호퍼/분쇄기 <strong>라인 클리어링(Line Clearing) 공정</strong> 및 교체 폐기 원료(Scrap) 발생 통제. 제품 규격 변경 시 금형 분리 및 냉각 배관 탈부착 등 Changeover 공정 셋업 수행.</p>
+                                <div class="tl-outcome">
+                                    <i class="fas fa-cube"></i>
+                                    <span>도메인 시너지: 제조 공정 MES 비즈니스 로직 설계의 도메인 기반 확보</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1160,8 +1272,8 @@
                     </h2>
                     
                     <p class="closing-p">
-                        개발을 모르는 상태에서 시작했던 16년 이상의 제조/물류 현업 관리 경험을 아키텍처와 코드로 실현했습니다.<br>
-                        현장의 언어로 기획자와 개발자 사이를 잇고, 비즈니스 가치를 극대화하는 든든한 백엔드 아키텍처를 구축하겠습니다.
+                        16년 이상의 제조/물류 현업 현장에서 축적한 비즈니스 노하우를 바탕으로, 복잡한 실무 프로세스를 견고한 백엔드 아키텍처와 코드로 실현합니다.<br>
+                        현장의 언어로 현업 기획자와 기술 개발자 사이의 소통 병목을 해결하고, 비즈니스 가치를 극대화하는 든든한 백엔드 시스템을 구축하겠습니다.
                     </p>
 
                     <div class="closing-divider"></div>
