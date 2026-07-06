@@ -1715,7 +1715,7 @@ body {
  ========================================== */
 .growth-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
 }
 
@@ -1739,6 +1739,22 @@ body {
     background: var(--gradient-cyan-emerald);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.growth-icon-box {
+    font-size: 1.25rem;
+    color: var(--accent-cyan);
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+}
+
+.growth-card:hover .growth-icon-box {
+    transform: scale(1.15);
+    color: var(--accent-emerald);
 }
 
 .growth-card-header h4 {
@@ -1793,8 +1809,19 @@ body {
 
 .growth-tags span {
     font-family: var(--font-mono);
-    font-size: 0.7rem;
-    color: var(--text-muted);
+    font-size: 0.68rem;
+    color: var(--accent-cyan);
+    background: rgba(56, 189, 248, 0.05);
+    border: 1px solid rgba(56, 189, 248, 0.12);
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+}
+
+.growth-card:hover .growth-tags span {
+    border-color: rgba(56, 189, 248, 0.3);
+    background: rgba(56, 189, 248, 0.1);
 }
 
 /* ==========================================
@@ -1969,6 +1996,10 @@ body {
     .twotrack-timeline {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .growth-grid {
+        grid-template-columns: 1fr;
     }
 }
 
