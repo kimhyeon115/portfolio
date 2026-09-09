@@ -900,116 +900,6 @@ body {
 }
 
 
-/* AI Terminal Simulator Widget */
-.terminal-widget {
-    font-family: var(--font-mono);
-    border-radius: 14px;
-    background: rgba(5, 7, 18, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: var(--shadow-md);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    height: 380px;
-}
-
-.terminal-header {
-    background: rgba(15, 23, 42, 0.85);
-    padding: 0.6rem 1rem;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.terminal-dots {
-    display: flex;
-    gap: 6px;
-}
-
-.terminal-dots span {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-}
-
-.terminal-dots .red { background: #ef4444; }
-.terminal-dots .yellow { background: #f59e0b; }
-.terminal-dots .green { background: #10b981; }
-
-.terminal-title {
-    color: var(--text-muted);
-    font-size: 0.7rem;
-    flex-grow: 1;
-    text-align: center;
-    margin-right: 3rem;
-}
-
-.terminal-body {
-    padding: 1rem;
-    overflow-y: auto;
-    flex-grow: 1;
-    font-size: 0.8rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.terminal-line {
-    color: #f1f5f9;
-    word-break: break-all;
-    line-height: 1.5;
-}
-
-.term-system { color: var(--accent-emerald); }
-.term-highlight { color: var(--accent-cyan); font-weight: 500; }
-.term-accent { color: var(--accent-violet); }
-.terminal-prompt { color: var(--accent-cyan); margin-right: 0.4rem; }
-
-.terminal-input-line {
-    display: flex;
-    align-items: center;
-    padding: 0.6rem 1rem;
-    background: rgba(10, 15, 30, 0.6);
-    border-top: 1px solid rgba(255, 255, 255, 0.04);
-}
-
-#terminal-input {
-    background: transparent;
-    border: none;
-    outline: none;
-    color: #ffffff;
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    flex-grow: 1;
-}
-
-.terminal-quick-buttons {
-    display: flex;
-    gap: 0.4rem;
-    padding: 0.5rem 1rem;
-    background: rgba(5, 7, 18, 0.95);
-    border-top: 1px solid rgba(255, 255, 255, 0.04);
-    flex-wrap: wrap;
-}
-
-.terminal-quick-buttons button {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    color: var(--text-muted);
-    padding: 0.3rem 0.6rem;
-    border-radius: 5px;
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    cursor: pointer;
-    transition: var(--transition-smooth);
-}
-
-.terminal-quick-buttons button:hover {
-    background: rgba(56, 189, 248, 0.08);
-    color: var(--accent-cyan);
-    border-color: var(--accent-cyan);
-}
-
 /* ==========================================
   COMPETENCIES & TECH STACK
  ========================================== */
@@ -1215,7 +1105,9 @@ body {
 /* Two-Track Grid Container */
 .twotrack-timeline {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* 그리드 트랙의 기본 최소값은 auto(=내용의 min-content)라, 줄바꿈 지점이 없는 긴 토큰이
+       있으면 1fr 이어도 열이 그만큼 밀려나 가로 스크롤이 생긴다. minmax(0,...) 로 고정한다. */
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 9.5rem;                  /* 두 트랙(Left, Right) 간의 가로 간격을 9.5rem으로 대폭 확장 */
     max-width: 1400px;            /* 컨테이너 최대 폭을 1400px로 늘려 카드 너비 확보 */
     margin: 0 auto;
@@ -1297,6 +1189,10 @@ body {
 .tl-content {
     padding: 1.5rem;
     position: relative;
+    min-width: 0;
+    /* `Spring MVC(Controller·Service·Mapper)·MyBatis` 처럼 가운뎃점으로 이어진 기술 스택 표기는
+       줄바꿈 지점이 없는 하나의 토큰이라, 좁은 화면에서 카드를 넘쳐 흐른다. */
+    overflow-wrap: anywhere;
 }
 
 .tl-icon-box {
@@ -2425,7 +2321,7 @@ body {
     }
 
     .twotrack-timeline {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 2rem;
     }
 
