@@ -1,12 +1,16 @@
-# 개인 작업 메모 (지원 전략·회사 분석 등) — 공개 저장소에 올리지 않는다
-_notes/
-
-# WSL/Windows 파일 전송 시 생기는 잔여 메타데이터
+# OS·탐색기 생성 파일
+.DS_Store
+Thumbs.db
+desktop.ini
 *:Zone.Identifier
 
-# 프리랜서 수주용 버전 — 사실 검증 전이라 공개하지 않는다 (정리 후 해제)
-freelance.html
-freelance.html.bak
+# 에디터·IDE 설정
+.idea/
+.vscode/
+*.swp
 
-# 개편 작업 회의록 — 프리랜서 전환 전략·내부 논의가 담겨 있어 공개하지 않는다
-개편_회의록.md
+# 로컬 작업 파일
+_notes/
+*.bak
+*.log
+*.tmp
