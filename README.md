@@ -1,6 +1,6 @@
 # 김현 — 백엔드·풀스택 개발자 포트폴리오
 
-> 🔗 **[포트폴리오 바로가기](https://kimhyeon115.github.io/portfolio/)**
+> 🔗 **[포트폴리오 바로가기](https://kimhyeon115.github.io/portfolio/fulltime.html)**
 
 업무 규칙이 복잡한 B2B 시스템을 만드는 개발자입니다.
 제조·물류 현업 16년 경험을 개발로 옮겨, 상태 전이·권한 분기·금액 정합이 얽힌 도메인을 주로 다뤘습니다.
