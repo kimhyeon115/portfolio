@@ -231,8 +231,23 @@ body {
     color: var(--accent-emerald);
     font-weight: 600;
     letter-spacing: 0.5px;
-    margin-bottom: 1.1rem;
+    margin-bottom: 0.35rem;
     white-space: nowrap;
+}
+
+/* 사이드바 경력 요약: 개발 연차를 전 페이지에서 상시 노출한다.
+   KPI 카드가 도메인·기술 축이라 연차 신호가 없던 것을 보완. */
+.profile-career {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 1.1rem;
+    letter-spacing: -0.2px;
+    white-space: nowrap;
+}
+
+.profile-career span {
+    color: rgba(148, 163, 184, 0.5);
+    margin: 0 0.15rem;
 }
 
 .sidebar-download-btn {
