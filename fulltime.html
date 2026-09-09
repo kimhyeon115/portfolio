@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=8.2">
+    <link rel="stylesheet" href="style.css?v=8.3">
 </head>
 <body>
     <!-- Background Canvas for Neural Network Effect -->
@@ -116,9 +116,9 @@
                 <div class="stats-grid">
                     <div class="stat-card glass-card">
                         <div class="stat-icon"><i class="fas fa-laptop-code"></i></div>
-                        <div class="stat-number">5개사</div>
-                        <div class="stat-label">실무 프로젝트 수행</div>
-                        <div class="stat-desc">2023.08~ · 세인티 · 림팩토리 · 다인이엔씨 · 앤드와이즈 · 이브레인소프트</div>
+                        <div class="stat-number">7개</div>
+                        <div class="stat-label">업무 도메인 프로젝트</div>
+                        <div class="stat-desc">인증서 · IoT 계측 · 의료 EMR · 유통 ERP · 스마트팜 · 자동차 · 대학 CMS</div>
                     </div>
                     <div class="stat-card glass-card">
                         <div class="stat-icon"><i class="fas fa-leaf"></i></div>
@@ -465,7 +465,7 @@
                                 </p>
                                 <div class="tl-outcome">
                                     <i class="fas fa-check-circle"></i>
-                                    <span>핵심 성과: 계측 데이터 정합성 확보 및 조회 성능 10배 개선</span>
+                                    <span>핵심 성과: 계측 데이터 정합성 확보 및 대용량 조회 10초대 → 3초대 단축</span>
                                 </div>
                             </div>
                         </div>
@@ -686,7 +686,7 @@
                                     <span class="badge-role">사내 유일 개발자</span>
                                     <span class="badge-outcome">멀티테넌시 통합으로 유지보수 부담 경감</span>
                                     <span class="badge-outcome">데이터 정합성 확보</span>
-                                    <span class="badge-outcome">조회 성능 10배 향상</span>
+                                    <span class="badge-outcome">대용량 조회 10초대 → 3초대</span>
                                 </div>
                             </div>
                             
@@ -755,7 +755,7 @@
                                     </div>
                                     <div class="trouble-section solution">
                                         <div class="trouble-header sol-txt"><i class="fas fa-check-circle"></i> 해결</div>
-                                        <div class="trouble-body">데이터 타입을 Decimal 타입으로 표준화하여 부동 소수점 오차를 차단하고, 실행 계획 분석 기반 복합 인덱스(Composite Index) 튜닝으로 대용량 쿼리 조회 시간을 10분의 1로 단축. Nginx 리버스 프록시 연동 멀티테넌시로 배포를 단일 패키지로 통합.</div>
+                                        <div class="trouble-body">데이터 타입을 Decimal 타입으로 표준화하여 부동 소수점 오차를 차단하고, 실행 계획 분석 기반 복합 인덱스(Composite Index) 튜닝으로 10초 이상 걸리던 대용량 조회를 3초대로 단축. Nginx 리버스 프록시 연동 멀티테넌시로 배포를 단일 패키지로 통합.</div>
                                     </div>
                                 </div>
                             </div>
@@ -1140,7 +1140,7 @@
                             </div>
                             <div class="growth-section">
                                 <span class="growth-label grow">해결</span>
-                                <p>EXPLAIN 실행 계획 분석을 통해 병목을 유발하는 쿼리 조건의 카디널리티 및 선택도(Selectivity)를 분석했습니다. 이를 바탕으로 다중 컬럼 복합 인덱스(Composite Index)를 재설계하고, 조인 시 드라이빙 테이블(Driving Table) 순서와 서브쿼리를 개선해 조회 응답 시간을 기존의 10분의 1 수준으로 줄였습니다.</p>
+                                <p>EXPLAIN 실행 계획 분석을 통해 병목을 유발하는 쿼리 조건의 카디널리티 및 선택도(Selectivity)를 분석했습니다. 이를 바탕으로 다중 컬럼 복합 인덱스(Composite Index)를 재설계하고, 조인 시 드라이빙 테이블(Driving Table) 순서와 서브쿼리를 개선해, 10~15초가 걸리던 조회 응답을 3초대까지 줄였습니다.</p>
                             </div>
                         </div>
                         <div class="growth-tags">
@@ -1199,6 +1199,14 @@
                             <li>제조·물류 현장에서 16년간 생산·재고 업무를 직접 다뤘고, 그중 11년은 생산관리부에서 일했습니다</li>
                             <li>2023년 개발로 전환한 뒤 MES·ERP·EMR·IoT 계측처럼 <strong>업무 규칙이 복잡한 시스템</strong>을 주로 맡았습니다</li>
                             <li>현재는 Spring Boot 멀티모듈 + Next.js 환경에서 인증서 발급·정산 플랫폼을 개발하고 있습니다</li>
+                        </ul>
+                    </div>
+
+                    <div class="contact-info-block">
+                        <span class="contact-info-title">이 분야에 관심을 갖는 이유</span>
+                        <ul class="project-details-ul contact-info-list">
+                            <li>게임의 <strong>데미지·확률 계산 공식</strong>이 어떻게 설계되는지 오래 찾아보고 분석해 왔고, 가벼운 엔진과 AI 도구로 짧게나마 직접 만들어 본 적도 있습니다</li>
+                            <li>지금까지 맡아온 인증서 발급, 의료 수가 수납, 공급가 정산은 모두 <strong>규칙에 따라 수치가 정확히 떨어져야 하는 업무</strong>였습니다. 제가 해온 일과 이어지는 영역이라고 생각해 지원했습니다</li>
                         </ul>
                     </div>
 
