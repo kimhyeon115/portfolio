@@ -13,6 +13,9 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    word-break: keep-all;
+    overflow-wrap: break-word;
 }
 
 :root {
@@ -59,6 +62,19 @@
     
     /* Transition */
     --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Keyboard Focus Accessibility (dark theme: default UA outline renders white) */
+a:focus,
+button:focus {
+    outline: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent-cyan);
+    outline-offset: 3px;
+    border-radius: 8px;
 }
 
 /* Helper Utilities */
@@ -243,6 +259,29 @@ body {
     box-shadow: 0 6px 20px rgba(56, 189, 248, 0.35);
 }
 
+.sidebar-github-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 100%;
+    margin-top: 0.6rem;
+    padding: 0.45rem 0.6rem;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.sidebar-github-link:hover {
+    color: var(--text-primary);
+    border-color: rgba(56, 189, 248, 0.4);
+    background: rgba(56, 189, 248, 0.06);
+}
+
 /* Sidebar Menu */
 .sidebar-menu {
     display: flex;
@@ -260,6 +299,7 @@ body {
     color: var(--text-muted);
     text-decoration: none;
     border-radius: 12px;
+    border: 1px solid transparent;
     transition: var(--transition-smooth);
     width: 100%;
 }
@@ -312,6 +352,16 @@ body {
     text-shadow: var(--shadow-glow-cyan);
 }
 
+/* Clicking/tapping a menu item already shows selection via .active background,
+   so swap the bright outer focus ring for a low-opacity inset one (no outward halo) */
+.menu-link:focus {
+    outline: none;
+}
+
+.menu-link:focus-visible {
+    box-shadow: inset 0 0 0 2px rgba(56, 189, 248, 0.4);
+}
+
 /* RIGHT CONTENT AREA */
 .main-content {
     margin-left: 320px;
@@ -351,6 +401,19 @@ body {
     color: var(--text-primary);
     font-size: 1.4rem;
     cursor: pointer;
+}
+
+/* Dim backdrop behind the open mobile sidebar (hidden on desktop, see media query) */
+.mobile-sidebar-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    background: rgba(4, 6, 15, 0.6);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 /* Section Common in Main Content */
@@ -492,7 +555,7 @@ body {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     gap: 2rem;
-    align-items: start;
+    align-items: stretch;
 }
 
 .branding-card {
@@ -547,6 +610,9 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
+    /* 우측 위젯이 더 높을 때 남는 공간을 항목 간격으로 분배해 하단 빈칸을 없앤다 */
+    flex: 1;
+    justify-content: space-between;
 }
 
 .strategy-item {
@@ -957,7 +1023,7 @@ body {
     justify-content: center;
     color: var(--accent-cyan);
     font-size: 1.25rem;
-    transition: var(--transition-smooth);
+    transition: all 1.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .competency-card:hover .comp-icon-box {
@@ -1255,6 +1321,26 @@ body {
     margin-bottom: 0.25rem;
 }
 
+.tl-status-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--accent-emerald);
+    background: rgba(52, 211, 153, 0.1);
+    border: 1px solid rgba(52, 211, 153, 0.25);
+    padding: 0.1rem 0.5rem;
+    border-radius: 20px;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+.tl-status-badge.tl-status-edu {
+    color: var(--accent-indigo);
+    background: rgba(99, 102, 241, 0.1);
+    border-color: rgba(99, 102, 241, 0.25);
+}
+
 .tl-comp {
     font-size: 0.78rem;
     color: var(--text-muted);
@@ -1274,6 +1360,17 @@ body {
 
 .tl-content p strong {
     color: var(--accent-cyan);
+}
+
+.tl-inline-link {
+    color: var(--accent-cyan);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.tl-inline-link:hover {
+    color: var(--accent-emerald);
 }
 
 .tl-outcome {
@@ -1297,6 +1394,209 @@ body {
     gap: 3rem;
 }
 
+/* Current Engagement Brief (text-only, deliberately not a screenshot project card) */
+.current-engagement-brief {
+    padding: 1.75rem;
+    border-color: rgba(52, 211, 153, 0.3);
+}
+
+.brief-header {
+    margin-bottom: 1.25rem;
+}
+
+.brief-tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-emerald);
+    background: rgba(52, 211, 153, 0.08);
+    border: 1px solid rgba(52, 211, 153, 0.25);
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    margin-bottom: 0.6rem;
+}
+
+.brief-header h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.3;
+    margin-top: 0.5rem;
+}
+
+/* Code repository link (evidence for a project/troubleshooting claim) */
+.repo-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: 0.9rem;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    border-radius: 8px;
+    background: rgba(148, 163, 184, 0.05);
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.repo-link span {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 0.74rem;
+    opacity: 0.8;
+}
+
+.repo-link:hover {
+    color: var(--text-primary);
+    border-color: rgba(56, 189, 248, 0.45);
+    background: rgba(56, 189, 248, 0.08);
+}
+
+.oe-repo-note {
+    margin-top: 0.6rem;
+}
+
+.oe-repo-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* AI pipeline outcome bar (roadmap widget footer) */
+.pipeline-outcome {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-top: auto;
+    padding: 0.85rem 1rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.14);
+    background: rgba(52, 211, 153, 0.05);
+}
+
+.pipeline-outcome i {
+    color: var(--accent-emerald);
+    font-size: 0.9rem;
+    margin-top: 0.15rem;
+    flex-shrink: 0;
+}
+
+.pipeline-outcome p {
+    margin: 0;
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+}
+
+.brief-client {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    margin-top: 0.35rem;
+}
+
+.brief-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 1.5rem;
+}
+
+.brief-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.brief-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent-emerald);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.brief-item p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+    word-break: keep-all;
+}
+
+/* Other Engagements (collapsible, no case page) */
+.other-engagements {
+    padding: 0;
+    overflow: hidden;
+}
+
+.other-engagements-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 1.1rem 1.5rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.other-engagements-toggle:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.other-engagements-toggle .toggle-icon {
+    transition: transform 0.3s ease;
+    font-size: 0.8rem;
+}
+
+.other-engagements-toggle[aria-expanded="true"] .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.other-engagements-body {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.other-engagements-body[hidden] {
+    display: none;
+}
+
+.other-engagement-item {
+    padding-top: 1rem;
+}
+
+.other-engagement-item strong {
+    color: var(--text-primary);
+    font-size: 0.92rem;
+}
+
+.other-engagement-item .oe-period {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+}
+
+.other-engagement-item p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 0.35rem;
+    line-height: 1.6;
+}
+
 .project-card {
     display: grid;
     grid-template-columns: 1.15fr 0.85fr;
@@ -1307,6 +1607,13 @@ body {
 .project-info-side {
     display: flex;
     flex-direction: column;
+    /* 그리드 항목의 기본 min-width:auto 는 내부 min-content 만큼 열을 밀어낸다.
+       좁은 화면에서 탭 버튼 줄이 열 너비를 강제해 가로 스크롤이 생기던 것을 차단한다. */
+    min-width: 0;
+}
+
+.project-visual-side {
+    min-width: 0;
 }
 
 .project-card-header {
@@ -1332,63 +1639,94 @@ body {
 .project-badges {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4rem;
+    gap: 0.4rem 1.1rem;
     margin-top: 0.6rem;
 }
 
-.badge-role {
-    background: rgba(167, 139, 250, 0.08);
-    border: 1px solid rgba(167, 139, 250, 0.2);
-    color: var(--accent-violet);
-    padding: 0.2rem 0.5rem;
-    border-radius: 5px;
+/* Flat label style (no border/pill shape) so these read as info tags,
+   clearly distinct from the bordered, clickable project-tabs-nav buttons below them */
+.badge-role,
+.badge-outcome {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    padding: 0.2rem 0;
     font-size: 0.72rem;
     font-weight: 600;
+}
+
+.badge-role::before,
+.badge-outcome::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+}
+
+.badge-role {
+    color: var(--accent-violet);
 }
 
 .badge-outcome {
-    background: rgba(52, 211, 153, 0.08);
-    border: 1px solid rgba(52, 211, 153, 0.2);
     color: var(--accent-emerald);
-    padding: 0.2rem 0.5rem;
-    border-radius: 5px;
-    font-size: 0.72rem;
-    font-weight: 600;
 }
 
-/* Project Tabs */
+/* Project Tabs - grouped as ONE segmented-control bar so it doesn't read as
+   scattered tag chips (the badge-role/badge-outcome pills sit right above it) */
 .project-tabs-nav {
     display: flex;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    flex-wrap: wrap;
+    gap: 0.5rem;
     margin: 0.85rem 0 1.25rem 0;
-    gap: 0.85rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .tab-btn {
-    background: none;
-    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 8px;
     color: var(--text-muted);
     font-family: var(--font-heading);
     font-weight: 600;
-    font-size: 0.8rem;
-    padding: 0.4rem 0.2rem;
+    font-size: 0.78rem;
+    padding: 0.45rem 0.9rem;
     cursor: pointer;
-    position: relative;
     transition: var(--transition-smooth);
 }
 
-.tab-btn.active {
-    color: var(--accent-cyan);
+.tab-btn i {
+    font-size: 0.72rem;
 }
 
-.tab-btn.active::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--accent-cyan);
+.tab-btn:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.tab-btn.active {
+    color: var(--text-dark);
+    background: var(--gradient-cyan-emerald);
+    border-color: transparent;
+    box-shadow: 0 2px 10px rgba(56, 189, 248, 0.25);
+}
+
+.tab-btn.active:hover {
+    color: var(--text-dark);
+    transform: none;
+}
+
+.tab-btn.active:hover {
+    color: var(--text-dark);
 }
 
 /* Tab Contents */
@@ -1565,11 +1903,24 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* 세로형 캡처가 가로 프레임에 들어올 때 상단(내비·헤더)이 남도록 위쪽 기준으로 크롭한다.
+       가로형 캡처는 좌우가 잘리므로 이 값에 영향받지 않는다. */
+    object-position: 50% 0;
     transition: var(--transition-smooth);
 }
 
 .main-preview-frame:hover img {
     transform: scale(1.02);
+}
+
+/* Tone down bright/light-theme project screenshots to blend with the dark UI */
+.main-preview-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(160deg, rgba(6, 8, 19, 0.1) 0%, rgba(6, 8, 19, 0.4) 100%);
+    pointer-events: none;
 }
 
 .zoom-overlay {
@@ -1578,6 +1929,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 2;
     background: rgba(6, 8, 19, 0.45);
     display: flex;
     align-items: center;
@@ -1715,8 +2067,14 @@ body {
  ========================================== */
 .growth-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+}
+
+@media (max-width: 1280px) {
+    .growth-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .growth-card {
@@ -1897,6 +2255,50 @@ body {
     margin: 0 auto 2rem auto;
 }
 
+/* Contact page structured blocks (맡는 일 / 협업 조건 / 문의 체크리스트) */
+.contact-info-block {
+    max-width: 700px;
+    margin: 1.5rem auto 0 auto;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    padding: 1.5rem 1.75rem;
+}
+
+.contact-info-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.contact-info-title::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 1rem;
+    background: var(--gradient-cyan-emerald);
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.contact-info-list {
+    gap: 0.5rem;
+}
+
+.contact-collab-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.contact-checklist {
+    margin: 1.5rem auto 0 auto;
+}
+
 .closing-divider {
     width: 100%;
     max-width: 450px;
@@ -1955,7 +2357,12 @@ body {
     .sidebar.active {
         transform: translateX(0);
     }
-    
+
+    .mobile-sidebar-backdrop.active {
+        display: block;
+        opacity: 1;
+    }
+
     .main-content {
         margin-left: 0;
         padding: 2rem 1.5rem;
@@ -2014,6 +2421,10 @@ body {
     .closing-links {
         flex-direction: column;
         gap: 1.25rem;
+    }
+
+    .brief-grid {
+        grid-template-columns: 1fr;
     }
 }
 

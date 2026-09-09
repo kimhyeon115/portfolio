@@ -10,6 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuLinks = document.querySelectorAll('.menu-link');
     const contentSections = document.querySelectorAll('.content-section');
     const sidebar = document.querySelector('.sidebar');
+    const sidebarBackdrop = document.querySelector('.mobile-sidebar-backdrop');
+
+    function setSidebarOpen(isOpen) {
+        if (!sidebar) return;
+        sidebar.classList.toggle('active', isOpen);
+        if (sidebarBackdrop) sidebarBackdrop.classList.toggle('active', isOpen);
+    }
 
     function switchSection(targetId) {
         // Deactivate all menu links & sections
@@ -31,9 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
 
         // Close sidebar on mobile after clicking
-        if (sidebar && sidebar.classList.contains('active')) {
-            sidebar.classList.remove('active');
-        }
+        setSidebarOpen(false);
     }
 
     menuLinks.forEach(link => {
@@ -68,13 +73,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobileMenuToggle && sidebar) {
         mobileMenuToggle.addEventListener('click', (e) => {
             e.stopPropagation();
-            sidebar.classList.toggle('active');
+            setSidebarOpen(!sidebar.classList.contains('active'));
         });
 
-        // Close sidebar when clicking outside on mobile
+        // Close sidebar when clicking outside (backdrop tap included) on mobile
         document.addEventListener('click', (e) => {
             if (sidebar.classList.contains('active') && !sidebar.contains(e.target) && e.target !== mobileMenuToggle) {
-                sidebar.classList.remove('active');
+                setSidebarOpen(false);
             }
         });
     }
@@ -454,23 +459,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailInquiryBtn = document.getElementById('email-inquiry-btn');
     if (emailInquiryBtn) {
         emailInquiryBtn.addEventListener('click', (e) => {
-            // Copy email address to clipboard
             const email = 'candle_kh@naver.com';
+
+            // Open the user's mail client with a pre-filled inquiry template
+            const subject = encodeURIComponent('[프로젝트 문의]');
+            const body = encodeURIComponent('안녕하세요, 프로젝트 문의드립니다.\n\n- 현재 시스템 스택:\n- 하고 싶은 것 / 지금 아픈 지점:\n- 희망 기간, 원격/상주 여부:\n');
+            window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+
+            // Also copy the email address to clipboard as a fallback
+            // (mail client may not be configured on this device)
             navigator.clipboard.writeText(email).then(() => {
-                // Show custom toast notification
                 let toast = document.querySelector('.email-toast');
                 if (!toast) {
                     toast = document.createElement('div');
                     toast.className = 'email-toast';
                     document.body.appendChild(toast);
                 }
-                toast.textContent = '이메일 주소가 복사되었습니다! (candle_kh@naver.com)';
-                
+                toast.textContent = '메일 앱을 열었습니다 (이메일 주소도 복사됨: candle_kh@naver.com)';
+
                 // Trigger reflow to restart transition if clicked repeatedly
                 toast.classList.remove('show');
-                void toast.offsetWidth; 
+                void toast.offsetWidth;
                 toast.classList.add('show');
-                
+
                 // Hide after 3 seconds
                 setTimeout(() => {
                     toast.classList.remove('show');
@@ -478,6 +489,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }).catch(err => {
                 console.error('Failed to copy email: ', err);
             });
+        });
+    }
+
+    // 9. Other Engagements Collapsible Toggle
+    const otherEngagementsToggle = document.querySelector('.other-engagements-toggle');
+    if (otherEngagementsToggle) {
+        otherEngagementsToggle.addEventListener('click', () => {
+            const body = otherEngagementsToggle.nextElementSibling;
+            const isExpanded = otherEngagementsToggle.getAttribute('aria-expanded') === 'true';
+            otherEngagementsToggle.setAttribute('aria-expanded', String(!isExpanded));
+            body.hidden = isExpanded;
         });
     }
 });
