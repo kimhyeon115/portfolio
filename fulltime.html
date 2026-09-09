@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=7.4">
+    <link rel="stylesheet" href="style.css?v=7.7">
 </head>
 <body>
     <!-- Background Canvas for Neural Network Effect -->
@@ -431,19 +431,19 @@
                             <div class="tl-time">2026.04 ~ 2026.06</div>
                             <div class="tl-content glass-card">
                                 <div class="tl-icon-box"><i class="fas fa-screwdriver-wrench"></i></div>
-                                <h4>대학 통합 CMS 기술지원 및 예약 기능 신규 구축</h4>
+                                <h4>대학 통합 CMS 기술지원 및 요건별 기능 커스터마이징</h4>
                                 <span class="tl-comp">㈜앤드와이즈</span>
                                 <p style="line-height: 1.7; font-size: 0.88rem;">
-                                    국내 주요 대학 대상의 대형 CMS 솔루션 기술지원 및 백엔드 커스터마이징, 인프라 관리.<br>
-                                    • <strong>강의실·시설물 예약 기능 구축</strong>: 예약 라이프사이클과 예약 불가 기간 제어를 <strong>직접 설계·구축</strong> (타 대학 유사 기능을 참고해 해당 학교 요건에 맞게 구현). 게시판 유형별 커스텀 위젯 등 맞춤형 기능도 함께 개발.<br>
-                                    • <strong>SSO 연동</strong>: 솔루션 자체 SSO와 학교 전용 SSO 사이의 연결 구간 작업 (SSO 자체 구현이 아닌 연동 담당).<br>
-                                    • <strong>서버 관리 및 장애 탐지</strong>: 특정 게시판 대상 대용량 첨부파일 반복 다운로드로 서버 CPU 부하가 급증한 인시던트를 액세스 로그 분석으로 탐지·대응, 디스크 용량 관리를 위한 서버 로그 로테이션(Log Rotation) 셋업.<br>
+                                    Spring MVC(Controller·Service·Mapper)·MyBatis·JSP·Maven 기반 대형 CMS 솔루션의 기술지원과 백엔드 커스터마이징, 인프라 관리.<br>
+                                    • <strong>서버 부하 인시던트 탐지·대응</strong>: 특정 게시판 대상 대용량 첨부파일 반복 다운로드로 서버 CPU 부하가 급증한 장애를 액세스 로그 분석으로 원인 규명하고 대응. 디스크 용량 관리를 위한 서버 로그 로테이션(Log Rotation) 셋업.<br>
+                                    • <strong>예약 기능 요건 대응</strong>: 솔루션에 구현돼 있던 강의실·시설물 예약 기능을 해당 학교 요건에 맞게 조정. 예약 라이프사이클과 예약 불가 기간 제어가 요건대로 동작하도록 손보고, 타 대학의 유사 구현을 참고해 오류를 바로잡았습니다.<br>
+                                    • <strong>SSO 연동 및 맞춤 기능 개발</strong>: 솔루션 자체 SSO와 학교 전용 SSO 사이의 연결 구간 작업(SSO 자체 구현이 아닌 연동 담당), 게시판 유형별 커스텀 위젯 개발.<br>
                                     • <strong>준공공기관 보안/WA 대응</strong>: 대학교 보안 기준에 따른 서버 접근 제어 및 정기 웹 취약점 패치 적용. 웹 접근성(WA)은 <strong>외부 진단 결과를 받아 지적 항목을 교정</strong>.<br>
                                     • <strong>AI 코딩 도구 활용</strong>: Claude Code 등 터미널 기반 AI 에이전트를 활용해 대형 CMS 레거시 소스를 분석하고 오류 디버깅 속도를 단축.
                                 </p>
                                 <div class="tl-outcome">
                                     <i class="fas fa-check-circle"></i>
-                                    <span>핵심 성과: 예약 기능 신규 구축 및 서버 부하 인시던트 탐지·대응</span>
+                                    <span>핵심 성과: 서버 부하 인시던트 원인 규명·대응 및 학교 요건별 기능 커스터마이징</span>
                                 </div>
                             </div>
                         </div>
@@ -645,10 +645,16 @@
 
                     <!-- Current Engagement Brief: UCERT (text-only, not a screenshot project card) -->
                     <div class="current-engagement-brief glass-card">
-                        <div class="brief-header">
-                            <span class="brief-tag">진행 중 · 2026.06~2026.10(예정)</span>
-                            <h3>㈜이브레인소프트 — SSL/TLS 인증서 파트너 포털 구축 및 백엔드 개선</h3>
+                        <div class="brief-header project-card-header">
+                            <span class="project-period">2026.06 ~ 2026.10 (예정) | ㈜이브레인소프트</span>
+                            <h3>SSL/TLS 인증서 파트너 포털 구축 및 백엔드 개선</h3>
                             <span class="brief-client">고객사 ㈜한국기업보안 (유서트)</span>
+                            <div class="project-badges">
+                                <span class="badge-role badge-ongoing">진행 중</span>
+                                <span class="badge-role">풀스택 담당</span>
+                                <span class="badge-outcome">Spring Boot 3.2 멀티모듈</span>
+                                <span class="badge-outcome">계약 범위 외 어드민 지원</span>
+                            </div>
                         </div>
                         <div class="brief-grid">
                             <div class="brief-item">
@@ -1070,7 +1076,7 @@
                             <div class="other-engagement-item">
                                 <strong>㈜앤드와이즈 대학 통합 CMS 기술지원</strong>
                                 <span class="oe-period">2026.04 ~ 2026.06</span>
-                                <p>운영 중인 대학 CMS 유지보수 및 기술지원. 고객사 운영 화면 공개 동의를 받지 않아 역할과 기간만 기재합니다.</p>
+                                <p>Spring MVC·MyBatis·JSP 기반 대학 CMS의 유지보수 및 기술지원. 고객사 운영 화면 공개 동의를 받지 않아 역할과 기간만 기재합니다.</p>
                             </div>
                         </div>
                     </div>

@@ -1404,6 +1404,15 @@ body {
     margin-bottom: 1.25rem;
 }
 
+/* 진행 중 표시: 다른 카드의 역할 배지와 형태를 맞추되 색으로만 구분한다 */
+.badge-ongoing::before {
+    background: var(--accent-emerald);
+}
+
+.badge-ongoing {
+    color: var(--accent-emerald);
+}
+
 .brief-tag {
     display: inline-block;
     font-family: var(--font-mono);
