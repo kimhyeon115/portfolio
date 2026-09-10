@@ -986,6 +986,7 @@
                             <div class="project-tabs-nav">
                                 <button class="tab-btn active" data-tab="overview"><i class="fas fa-file-lines"></i> Overview</button>
                                 <button class="tab-btn" data-tab="architecture"><i class="fas fa-sitemap"></i> Architecture</button>
+                                <button class="tab-btn" data-tab="troubleshooting"><i class="fas fa-bug"></i> Troubleshooting</button>
                             </div>
 
                             <div class="tab-content active" data-content="overview">
@@ -1036,6 +1037,19 @@
                                 </div>
                             </div>
 
+
+                            <div class="tab-content" data-content="troubleshooting">
+                                <div class="trouble-block">
+                                    <div class="trouble-section problem">
+                                        <div class="trouble-header prob-txt"><i class="fas fa-exclamation-triangle"></i> 배경 (Problem)</div>
+                                        <div class="trouble-body">사내 PLC 통신 툴이 공유하는 시스템 변수로 공정 이력을 적재하던 중, 저장되는 값이 요건과 어긋나는 현상을 확인했습니다. 설비와의 통신 구간은 별도 담당자 영역이라, 프론트 로직 문제인지 통신 툴 문제인지 <strong>원인의 위치부터 갈라내야</strong> 했습니다.</div>
+                                    </div>
+                                    <div class="trouble-section solution">
+                                        <div class="trouble-header sol-txt"><i class="fas fa-check-circle"></i> 해결</div>
+                                        <div class="trouble-body">PLC 통신 담당자와 <strong>점검 범위를 나눠</strong> 각자 구간을 검증하고, 재현 테스트를 반복하며 입력값과 적재값을 대조했습니다. 그 결과 원인이 프론트 로직이 아니라 <strong>사내 통신 툴의 버퍼 할당</strong>에 있음을 근거와 함께 규명해 보고했습니다. 해당 툴은 라이선스 제품이라 <strong>직접 수정은 담당 영역 밖</strong>이었고, 확보한 근거를 넘겨 조치되도록 했습니다.</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="project-visual-side">
